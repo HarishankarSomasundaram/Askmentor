@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Askmentor.Core
+namespace Askmentor.Core.Service
 {
-    public class Class1
+  public interface ISampleService
     {
     }
 }

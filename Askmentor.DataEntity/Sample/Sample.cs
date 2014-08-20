@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Askmentor.Repository
+namespace Askmentor.DataEntity.Sample
 {
-    public class Class1
+    class Sample
     {
     }
 }
