@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Askmentor.Common
+namespace Askmentor.DataEntity.Sample
 {
-    class Constants
+    class Sample
     {
     }
 }
