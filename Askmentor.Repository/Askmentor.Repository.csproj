@@ -30,8 +30,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,15 +48,69 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AskmentorDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AskmentorDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AskmentorDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AskmentorDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AskmentorDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AskmentorDB.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Class1.cs" />
+    <Compile Include="Mentees_Tbl.cs">
+      <DependentUpon>AskmentorDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SampleRepository.cs" />
+    <Compile Include="temp_User_Tbl.cs">
+      <DependentUpon>AskmentorDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User_Tbl.cs">
+      <DependentUpon>AskmentorDB.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Askmentor.Core\Askmentor.Core.csproj">
       <Project>{ba9c4822-eb83-4d1f-bd79-e236120c8847}</Project>
       <Name>Askmentor.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Askmentor.DataEntity\Askmentor.DataEntity.csproj">
+      <Project>{82bebedb-3717-46e5-9809-6b6cd96c5c3e}</Project>
+      <Name>Askmentor.DataEntity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="AskmentorDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AskmentorDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="AskmentorDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AskmentorDB.edmx</DependentUpon>
+      <LastGenOutput>AskmentorDB.Context.cs</LastGenOutput>
+    </None>
+    <None Include="AskmentorDB.edmx.diagram">
+      <DependentUpon>AskmentorDB.edmx</DependentUpon>
+    </None>
+    <None Include="AskmentorDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AskmentorDB.edmx</DependentUpon>
+      <LastGenOutput>AskmentorDB.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

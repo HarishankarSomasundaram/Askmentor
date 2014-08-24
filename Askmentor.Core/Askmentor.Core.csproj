@@ -44,7 +44,12 @@
     <Compile Include="Repository\ISampleRepository.cs" />
     <Compile Include="Service\ISampleService.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Askmentor.DataEntity\Askmentor.DataEntity.csproj">
+      <Project>{82bebedb-3717-46e5-9809-6b6cd96c5c3e}</Project>
+      <Name>Askmentor.DataEntity</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

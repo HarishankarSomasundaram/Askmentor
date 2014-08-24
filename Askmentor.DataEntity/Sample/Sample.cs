@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Askmentor.DataEntity.Sample
 {
-    class Sample
+   public class Sample
     {
+       public string Name { get; set; } 
     }
 }
