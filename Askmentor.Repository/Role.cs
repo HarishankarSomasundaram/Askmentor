@@ -12,11 +12,12 @@ namespace Askmentor.Repository
     using System;
     using System.Collections.Generic;
     
-    public partial class Mentees_Tbl
+    public partial class Role
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public int Age { get; set; }
-        public bool Gender { get; set; }
+        public int RoleId { get; set; }
+        public string RoleName { get; set; }
+        public int UserID { get; set; }
+    
+        public virtual User User { get; set; }
     }
 }

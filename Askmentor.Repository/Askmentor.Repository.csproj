@@ -48,32 +48,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AskmentorDB.Context.cs">
+    <Compile Include="AskMentorDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AskmentorDB.Context.tt</DependentUpon>
+      <DependentUpon>AskMentorDB.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="AskmentorDB.cs">
+    <Compile Include="AskMentorDB.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AskmentorDB.tt</DependentUpon>
+      <DependentUpon>AskMentorDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="AskmentorDB.Designer.cs">
+    <Compile Include="AskMentorDB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AskmentorDB.edmx</DependentUpon>
+      <DependentUpon>AskMentorDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
-    <Compile Include="Mentees_Tbl.cs">
-      <DependentUpon>AskmentorDB.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SampleRepository.cs" />
-    <Compile Include="temp_User_Tbl.cs">
-      <DependentUpon>AskmentorDB.tt</DependentUpon>
+    <Compile Include="Role.cs">
+      <DependentUpon>AskMentorDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="User_Tbl.cs">
-      <DependentUpon>AskmentorDB.tt</DependentUpon>
+    <Compile Include="SampleRepository.cs" />
+    <Compile Include="User.cs">
+      <DependentUpon>AskMentorDB.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -87,25 +84,20 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="AskmentorDB.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AskmentorDB.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.Config" />
-    <None Include="AskmentorDB.Context.tt">
+    <EntityDeploy Include="AskMentorDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AskMentorDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="AskMentorDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AskmentorDB.edmx</DependentUpon>
-      <LastGenOutput>AskmentorDB.Context.cs</LastGenOutput>
+      <LastGenOutput>AskMentorDB.Context.cs</LastGenOutput>
+      <DependentUpon>AskMentorDB.edmx</DependentUpon>
     </None>
-    <None Include="AskmentorDB.edmx.diagram">
-      <DependentUpon>AskmentorDB.edmx</DependentUpon>
-    </None>
-    <None Include="AskmentorDB.tt">
+    <None Include="AskMentorDB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AskmentorDB.edmx</DependentUpon>
-      <LastGenOutput>AskmentorDB.cs</LastGenOutput>
+      <LastGenOutput>AskMentorDB.cs</LastGenOutput>
+      <DependentUpon>AskMentorDB.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

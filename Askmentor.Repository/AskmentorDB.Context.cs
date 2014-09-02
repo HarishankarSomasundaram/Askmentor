@@ -13,10 +13,10 @@ namespace Askmentor.Repository
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class AskmentorStagingEntities : DbContext
+    public partial class AskMentorDBContainer : DbContext
     {
-        public AskmentorStagingEntities()
-            : base("name=AskmentorStagingEntities")
+        public AskMentorDBContainer()
+            : base("name=AskMentorDBContainer")
         {
         }
     
@@ -25,8 +25,7 @@ namespace Askmentor.Repository
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Mentees_Tbl> Mentees_Tbl { get; set; }
-        public virtual DbSet<temp_User_Tbl> temp_User_Tbl { get; set; }
-        public virtual DbSet<User_Tbl> User_Tbl { get; set; }
+        public virtual DbSet<Role> Roles { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     }
 }
