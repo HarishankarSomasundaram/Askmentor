@@ -1,4 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Askmentor.Core.Service;
+using Askmentor.DataEntity;
+using Askmentor.Infra;
+using Askmentor.Service;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.ComponentModel.DataAnnotations;
+
+
 
 namespace Askmentor.WebUI.Models
 {
@@ -38,9 +48,12 @@ namespace Askmentor.WebUI.Models
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }
+        
 
-        [Display(Name = "Remember me?")]
-        public bool RememberMe { get; set; }
+    }
+    public class LoginUser
+    {
+        public List<LoginViewModel> UsersList { get; set; }
     }
 
     public class RegisterViewModel
@@ -59,5 +72,38 @@ namespace Askmentor.WebUI.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+    }
+
+    public class LoginModel
+    {
+        //List<RoleViewModel> oRoles = new List<RoleViewModel>();
+        // var roleRepo = IoC.Resolve<IRoleService>();
+        // var roleList = roleRepo.GetAll();
+        // foreach (var item in roleList)
+        // {
+        //     RoleViewModel oRole = new RoleViewModel();
+        //     oRole.Description = item.Description;
+        //     oRole.Name = item.Name;
+        //     oRole.RoleId = item.RoleId;
+        //     oRoles.Add(oRole);
+        // }
+        // return oRoles;
+
+        public List<LoginViewModel> GetAll()
+        {
+            List<LoginViewModel> userDetails = new List<LoginViewModel>();
+            var accountRepo = IoC.Resolve<IAccountService>();
+            var userList = accountRepo.GetAll();
+            foreach(var item in userList)
+            {
+                LoginViewModel oLogin = new LoginViewModel();
+                oLogin.UserName = item.UserName;
+                oLogin.Password = item.Password;
+                userDetails.Add(oLogin);
+            }
+            return userDetails;
+        }
+
+
     }
 }

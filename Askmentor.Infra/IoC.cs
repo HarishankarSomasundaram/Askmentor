@@ -23,6 +23,7 @@ namespace Askmentor.Infra
                     {
                         if (_container == null)
                         {
+                         
                             ContainerBuilder builder = new ContainerBuilder();
                             builder.RegisterModule(new ConfigurationSettingsReader("autofac"));
                             _container = builder.Build();

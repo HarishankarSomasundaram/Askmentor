@@ -39,15 +39,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autofac">
-      <HintPath>..\packages\Autofac.3.1.5\lib\net40\Autofac.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Autofac.Integration.Mvc">
-      <HintPath>..\packages\Autofac.Mvc4.3.1.0\lib\net40\Autofac.Integration.Mvc.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Autofac.3.0.0.0.Fakes">
+      <HintPath>FakesAssemblies\Autofac.3.0.0.0.Fakes.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -289,6 +285,9 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Fakes Include="Fakes\Autofac.fakes">
+      <SubType>Designer</SubType>
+    </Fakes>
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
@@ -313,7 +312,9 @@
     <Content Include="Scripts\sparkline.js" />
     <Content Include="Scripts\TwitterBootstrapMvcJs.js" />
     <None Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -356,6 +357,28 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Askmentor.Core\Askmentor.Core.csproj">
+      <Project>{ba9c4822-eb83-4d1f-bd79-e236120c8847}</Project>
+      <Name>Askmentor.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Askmentor.DataEntity\Askmentor.DataEntity.csproj">
+      <Project>{82bebedb-3717-46e5-9809-6b6cd96c5c3e}</Project>
+      <Name>Askmentor.DataEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Askmentor.Infra\Askmentor.Infra.csproj">
+      <Project>{b1aa5c84-0ed3-4cf1-b691-f043b1fa40a5}</Project>
+      <Name>Askmentor.Infra</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Askmentor.Repository\Askmentor.Repository.csproj">
+      <Project>{1e6db060-a478-4f99-9036-a64ddd7d289d}</Project>
+      <Name>Askmentor.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Askmentor.Service\Askmentor.Service.csproj">
+      <Project>{e7acf0e0-6529-4c49-ab96-671c0d63dd34}</Project>
+      <Name>Askmentor.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
