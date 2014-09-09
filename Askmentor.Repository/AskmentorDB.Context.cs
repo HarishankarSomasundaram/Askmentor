@@ -13,10 +13,10 @@ namespace Askmentor.Repository
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class AskMentorDBContainer : DbContext
+    public partial class AskmentorEntities : DbContext
     {
-        public AskMentorDBContainer()
-            : base("name=AskMentorDBContainer")
+        public AskmentorEntities()
+            : base("name=AskmentorEntities")
         {
         }
     

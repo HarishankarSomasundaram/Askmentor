@@ -11,6 +11,21 @@
     <AssemblyName>Askmentor.Repository</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -48,29 +63,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AskMentorDB.Context.cs">
+    <Compile Include="AskmentorDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AskMentorDB.Context.tt</DependentUpon>
+      <DependentUpon>AskmentorDB.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="AskMentorDB.cs">
+    <Compile Include="AskmentorDB.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AskMentorDB.tt</DependentUpon>
+      <DependentUpon>AskmentorDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="AskMentorDB.Designer.cs">
+    <Compile Include="AskmentorDB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AskMentorDB.edmx</DependentUpon>
+      <DependentUpon>AskmentorDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Role.cs">
-      <DependentUpon>AskMentorDB.tt</DependentUpon>
+      <DependentUpon>AskmentorDB.tt</DependentUpon>
     </Compile>
     <Compile Include="SampleRepository.cs" />
     <Compile Include="User.cs">
-      <DependentUpon>AskMentorDB.tt</DependentUpon>
+      <DependentUpon>AskmentorDB.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -85,24 +100,53 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <EntityDeploy Include="AskMentorDB.edmx">
+    <EntityDeploy Include="AskmentorDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AskMentorDB.Designer.cs</LastGenOutput>
+      <LastGenOutput>AskmentorDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="AskMentorDB.Context.tt">
+    <None Include="AskmentorDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>AskMentorDB.Context.cs</LastGenOutput>
-      <DependentUpon>AskMentorDB.edmx</DependentUpon>
+      <DependentUpon>AskmentorDB.edmx</DependentUpon>
+      <LastGenOutput>AskmentorDB.Context.cs</LastGenOutput>
     </None>
-    <None Include="AskMentorDB.tt">
+    <None Include="AskmentorDB.edmx.diagram">
+      <DependentUpon>AskmentorDB.edmx</DependentUpon>
+    </None>
+    <None Include="AskmentorDB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>AskMentorDB.cs</LastGenOutput>
-      <DependentUpon>AskMentorDB.edmx</DependentUpon>
+      <DependentUpon>AskmentorDB.edmx</DependentUpon>
+      <LastGenOutput>AskmentorDB.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Askmentor.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Askmentor_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Askmentor.mdf</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
