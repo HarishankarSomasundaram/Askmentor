@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountService.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SampleService.cs" />
@@ -47,6 +48,14 @@
     <ProjectReference Include="..\Askmentor.Core\Askmentor.Core.csproj">
       <Project>{ba9c4822-eb83-4d1f-bd79-e236120c8847}</Project>
       <Name>Askmentor.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Askmentor.DataEntity\Askmentor.DataEntity.csproj">
+      <Project>{82bebedb-3717-46e5-9809-6b6cd96c5c3e}</Project>
+      <Name>Askmentor.DataEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Askmentor.Infra\Askmentor.Infra.csproj">
+      <Project>{b1aa5c84-0ed3-4cf1-b691-f043b1fa40a5}</Project>
+      <Name>Askmentor.Infra</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
