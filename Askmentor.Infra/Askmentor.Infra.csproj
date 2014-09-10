@@ -58,8 +58,13 @@
       <Project>{ba9c4822-eb83-4d1f-bd79-e236120c8847}</Project>
       <Name>Askmentor.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Askmentor.Repository\Askmentor.Repository.csproj">
+      <Project>{1e6db060-a478-4f99-9036-a64ddd7d289d}</Project>
+      <Name>Askmentor.Repository</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="autofac.config" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>

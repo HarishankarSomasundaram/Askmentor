@@ -1,4 +1,4 @@
-﻿using Askmentor.Core.Service;
+﻿using Askmentor.Core.Repository;
 using Askmentor.DataEntity;
 using Askmentor.Infra;
 using Askmentor.Service;
@@ -92,7 +92,7 @@ namespace Askmentor.WebUI.Models
         public List<LoginViewModel> GetAll()
         {
             List<LoginViewModel> userDetails = new List<LoginViewModel>();
-            var accountRepo = IoC.Resolve<IAccountService>();
+            var accountRepo = IoC.Resolve<IAccountRepository>();
             var userList = accountRepo.GetAll();
             foreach(var item in userList)
             {

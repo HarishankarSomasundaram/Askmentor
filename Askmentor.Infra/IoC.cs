@@ -5,6 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Askmentor.Core.Repository;
+using Askmentor.Core.Service;
+using Askmentor.Repository;
 
 namespace Askmentor.Infra
 {
@@ -25,7 +28,15 @@ namespace Askmentor.Infra
                         {
                          
                             ContainerBuilder builder = new ContainerBuilder();
-                            builder.RegisterModule(new ConfigurationSettingsReader("autofac"));
+
+                            //builder.RegisterGeneric(typeof(AccountRepository)).As(typeof(IAccountRepository));
+
+                            builder.RegisterType<AccountRepository>().As<IAccountRepository>();
+                            //builder.RegisterType<AccountService>().As<IAccountService>();
+                            //builder.RegisterType<>().As<ICategoryService>();
+
+                            //builder.RegisterModule(new XmlFileReader(@"E:\Askmentor\Git\Askmentor\Askmentor.Infra\autofac.config"));
+                            //builder.RegisterModule(new ConfigurationSettingsReader("autofac"));
                             _container = builder.Build();
                         }
                     }
