@@ -11,10 +11,10 @@ namespace Askmentor.Repository
 {
     public class AccountRepository : IAccountRepository
     {
-        private AskMentorDBContainer _askmentorEntities = null;
+        private AskmentorEntities _askmentorEntities = null;
         public AccountRepository()
         {
-            _askmentorEntities = new AskMentorDBContainer();
+            _askmentorEntities = new AskmentorEntities();
         }
         public List<DataEntity.User.User> GetAll()
         {

@@ -20,13 +20,13 @@ namespace Askmentor.WebUI.Controllers
             return View();
         }
  
-        public string Login()
+        public ActionResult Login()
         {
-            List<LoginViewModel> oLoginviewModel = new List<LoginViewModel>();
+            LoginViewModel oLoginviewModel = new LoginViewModel();
+           //List<LoginViewModel> oLoginviewModel = new List<LoginViewModel>();
+           //oLoginviewModel = _LoginModel.GetAll();
 
-           oLoginviewModel = _LoginModel.GetAll();
-
-           return "hello";
+            return View(oLoginviewModel);
         }
         public ActionResult Register()
         {
