@@ -31,10 +31,31 @@ namespace Askmentor.Repository
                     PhoneNumber = x.PhoneNumber,
                     ModifiedDate = x.ModifiedDate,
                     LastLogonTIme = x.LastLogonTIme,
-                    LastIPAddress = x.LastIPAddress                   
+                    LastIPAddress = x.LastIPAddress
                 })
                 .ToList();
         }
+        public bool Get(string EmailID)
+        {
+            bool isExists = false;
 
+            var objUser = _askmentorEntities.Users.Where(x => x.EmailID == EmailID && x.IsDeleted == false).FirstOrDefault();
+            if (objUser != null)
+            {
+                isExists = true;
+            }
+            return isExists;
+        }
+        public bool ValidateUser(string EmailID, string Password)
+        {
+            bool isValid = false;
+
+            var objUser = _askmentorEntities.Users.Any(x => x.EmailID == EmailID && x.IsDeleted == false).FirstOrDefault();
+            if (objUser != null)
+            {
+                isValid = true;
+            }
+            return isValid;
+        }
     }
 }

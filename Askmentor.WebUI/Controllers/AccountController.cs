@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Askmentor.WebUI.Models;
+using System.Globalization;
 
 namespace Askmentor.WebUI.Controllers
 {
@@ -28,6 +29,35 @@ namespace Askmentor.WebUI.Controllers
 
             return View(oLoginviewModel);
         }
+        [HttpPost]
+        public ActionResult Login(LoginViewModel oLoginviewModel)
+        {
+            if (ModelState.IsValid)
+            {
+
+            }
+            if (_LoginModel.isUserValid(oLoginviewModel))
+            {
+ 
+            }
+            return View(oLoginviewModel);
+        }
+
+
+        public JsonResult IsEmailIDExists(string EmailID)
+            {
+
+            if (_LoginModel.isUserExists(EmailID))
+            {
+                  return Json(true, JsonRequestBehavior.AllowGet);
+            }
+             
+            string suggestedUID = String.Format(CultureInfo.InvariantCulture,
+                "{0} is not available.", EmailID);            
+            return Json(suggestedUID, JsonRequestBehavior.AllowGet);
+        }
+
+
         public ActionResult Register()
         {
             return View();

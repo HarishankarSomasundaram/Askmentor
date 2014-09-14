@@ -9,5 +9,7 @@ namespace Askmentor.Core.Repository
   public interface IAccountRepository
     {
       List<User> GetAll();
+      bool Get(string EmailID);
+      bool ValidateUser(string Email, string Password);
     }
 }

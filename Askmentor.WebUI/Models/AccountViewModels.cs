@@ -41,8 +41,10 @@ namespace Askmentor.WebUI.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "User name")]
-        public string UserName { get; set; }
+        [System.Web.Mvc.Remote("IsEmailIDExists", "Account")]
+        [RegularExpression(@"(\S)+", ErrorMessage = "White space is not allowed.")]
+        [Display(Name = "Email ID")]
+        public string EmailID { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -74,6 +76,8 @@ namespace Askmentor.WebUI.Models
         public string ConfirmPassword { get; set; }
     }
 
+   
+
     public class LoginModel
     {
         //List<RoleViewModel> oRoles = new List<RoleViewModel>();
@@ -89,6 +93,18 @@ namespace Askmentor.WebUI.Models
         // }
         // return oRoles;
 
+        public bool isUserValid(LoginViewModel oLoginviewModel)
+        {
+            var accountRepo = IoC.Resolve<IAccountRepository>();
+            return accountRepo.ValidateUser(oLoginviewModel.EmailID, oLoginviewModel.Password);
+        }
+
+        public bool isUserExists(string EmailID)
+        {
+            var accountRepo = IoC.Resolve<IAccountRepository>();
+            return accountRepo.Get(EmailID);
+        }
+
         public List<LoginViewModel> GetAll()
         {
             List<LoginViewModel> userDetails = new List<LoginViewModel>();
@@ -97,7 +113,7 @@ namespace Askmentor.WebUI.Models
             foreach(var item in userList)
             {
                 LoginViewModel oLogin = new LoginViewModel();
-                oLogin.UserName = item.UserName;
+                oLogin.EmailID = item.EmailID;
                 oLogin.Password = item.Password;
                 userDetails.Add(oLogin);
             }
